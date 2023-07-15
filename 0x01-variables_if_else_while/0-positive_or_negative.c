@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 /**
  * main - Entry point
  *
@@ -7,6 +8,9 @@
 int main(void)
 {
 	int n;
+
+	strand(time(0));
+	n = rand() - RAND_MAX / 2;
 
 	printf("Enter a number\n");
 	scanf("%d", &n);
