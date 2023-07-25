@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * _puts - prints string
- *@str: parameter
+ * print_rev - prints string
+ *@s: parameter
  * Return: 0 success
  */
 void print_rev(char *s)
