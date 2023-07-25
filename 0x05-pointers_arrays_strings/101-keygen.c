@@ -1,30 +1,35 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * *_strcpy - copies the string pointed to by src
- * including the terminating null byte (\0)
- * to the buffer pointed to by dest
- * @dest: pointer to the buffer in which we copy the string
- * @src: string to be copied
+ * main - program that generates random valid
+ * passwords for the program 101-crackme
  *
- * Return: the pointer to dest
+ * Return: Always 0 (Success)
  */
-char *_strcpy(char *dest, char *src)
+int main(void)
 {
-	int len, i;
+	int pass[100];
+	int i, sum, n;
 
-	len = 0;
+	sum = 0;	
 
-	while (src[len] != '\0')
+	srand(time(NULL));
+
+	for (i = 0; i < 100; i++)
 	{
-		len++;
+		pass[i] = rand() % 78;
+		sum += (pass[i] + '0');
+		putchar(pass[i] + '0');
+		if ((2772 - sum) - '0' < 78)
+		{
+			n = 2772 - sum - '0';
+			sum += n;
+			putchar(n + '0');
+			break;
+		}
 	}
 
-	for (i = 0; i < len; i++)
-	{
-		dest[i] = src[i];
-	}
-	dest[i] = '\0';
-
-	return (dest);
+	return (0);
 }
