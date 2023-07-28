@@ -7,19 +7,25 @@
 */
 int _strcmp(char *s1, char *s2)
 {
-int i, j;
+	int i, j;
 
-j = 0;
-i = 0;
+	j = 0;
+	i = 0;
+/*loop to check if current character in s1 and s2 is not the null*/
+/*in loop compare if s1 and s2 character are different*/
 
-if (s1[i] < s2[j])
-{
-return (-15);
-}
-else if (s1[i] > s2[j])
-{
-return (15);
-}
-else
-return (0);
+	while (s1[i] != '\0' && s2[j] != '\0')
+	{
+/*if character are different one character greater than other using ASCII*/
+		if (s1[i] != s2[j])
+		{
+			/*function return substraction of s1[i] - s2[j]*/
+			return (s1[i] - s2[j]);
+		}
+/*if character are the same the loop continue to the next index */
+		i++;
+		j++;
+	}
+/** if strings equal up to the null terminator it return 0*/
+	return (0);
 }
