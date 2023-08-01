@@ -15,6 +15,5 @@ char *_strchr(char *s, char c)
 		}
 		s++; /* Move to the next character in the string */
 	}
-
 	return (NULL); /* If the character c is not found, return NULL */
 }
