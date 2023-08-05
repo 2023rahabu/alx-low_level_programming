@@ -7,13 +7,15 @@
  */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (*s == c)
-		{
-			return (s); /* Return the address of the first occurrence of c */
-		}
-		s++; /* Move to the next character in the string */
+		if (s[i] == c)
+
+			return (s + i); /* Return the address of the first occurrence of c */
 	}
-	return (NULL); /* If the character c is not found, return NULL */
+	if (s[i] == c)
+		return (s + i);
+	return (0);/* If the character c is not found, return NULL */
 }
