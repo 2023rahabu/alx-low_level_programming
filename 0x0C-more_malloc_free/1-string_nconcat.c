@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * gstring_nconcat - function to concatnate strings with n bytes
+ * string_nconcat - function to concatnate strings with n bytes
  * @s1: destination for concatnation
  * @s2: source of string
  * @n: int type for size of byte
