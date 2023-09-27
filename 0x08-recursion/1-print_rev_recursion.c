@@ -2,14 +2,11 @@
 /**
  * _print_rev_recursion - print string in recursion
  *@s:parameter
+ *Return: 0
  */
 void _print_rev_recursion(char *s)
 {
-	if (*s == '\0')
-	{
-		_putchar('\n');
-	}
-	else
+	if (*s)
 	{
 		_print_rev_recursion(s + 1);
 		_putchar(*s);
