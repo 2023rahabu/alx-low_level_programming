@@ -22,10 +22,11 @@ int main(int argc, char *argv[])
 		result = a * b;
 
 		printf("%d\n", result);
-		else
-		{
-			printf("%s\n", "Error");
-			return (1);
-		}
-		return (0);
 	}
+	else
+	{
+		printf("%s\n", "Error");
+		return (1);
+	}
+	return (0);
+}
