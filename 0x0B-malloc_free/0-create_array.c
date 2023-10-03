@@ -1,23 +1,25 @@
 #include "main.h"
 /**
- *create_array - malloc function
- *@size: size of array
- *@c: character c
- *Return: Nothing
+ * create_array - check the code for Holberton School students.
+ * @size: argument for size of the array
+ * @c: argument for char
+ * Return: Always 0.
  */
 char *create_array(unsigned int size, char c)
 {
-	char *ptArray;
-	unsigned int count;
+	char *my_array;
+	unsigned int i = 0;
 
-	/* allocating enough space for all array members */
-	ptArray = malloc(size * sizeof(char));
+	my_array = malloc(size * sizeof(c));
 
-	/* put a char c in each of the memory locations */
-	for (count = 0; count < size; count++)
+	while (i < size)
 	{
-		/* assign the char to the specific memory location */
-		ptArray[count] = c;
+		if (my_array == NULL)
+		{
+			return (NULL);
+		}
+		my_array[i] = c;
+		i++;
 	}
-	return (ptArray);
+	return (my_array);
 }
