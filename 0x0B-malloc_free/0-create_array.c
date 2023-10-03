@@ -3,7 +3,7 @@
 *create_array - malloc function
 *@size: size of array
 *@c: character c
-*Return: pointer to char
+*Return: Nothing
 */
 char *create_array(unsigned int size, char c)
 {
