@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *_calloc - a function that allocates memory for an array
+ a*_calloc - a function that allocates memory for an array
  *@nmemb: number of blocks
  *@size: datatype
  *Return: allocated memory
@@ -15,7 +15,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	ptr_calloc = calloc(nmemb, sizeof(int));
+	ptr_calloc = malloc(nmemb * size);
 
 	if (ptr_calloc == NULL)
 	{
