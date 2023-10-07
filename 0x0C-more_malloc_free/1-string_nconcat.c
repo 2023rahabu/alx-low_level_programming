@@ -8,45 +8,44 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	size_t len1 = 0;
-	size_t len2 = 0;
-	size_t totlen = 0;
-	char *reslt = NULL;
-	size_t i;
+	char *concat_str;
+	unsigned int i;
+	unsigned int j;
+	unsigned int len1;
 
-	if (s1 != NULL)
+	len1 = 0;
+
+	if (s1 == NULL)
 	{
-		while (s1[len1] != '\0')
-		{
-			len1++;
-		}
+		s1 = "";
 	}
-	if (s2 != NULL)
+	if (s2 == NULL)
 	{
-		while (s2[len2] != '\0')
-		{
-			len2++;
-		}
+		s2 = "";
 	}
-	if (n < len2)
+
+	/** i calculae length of s1 */
+	for (i = 0; s1[i] != '\0'; i++)
 	{
-		totlen = len1 + n;
+		len1++;
 	}
-	else
-	{
-		totlen = len1 + len2;
-	}
-	reslt = (char *)malloc(totlen + 1);
-	if (reslt == NULL)
+
+	/** allocate memory*/
+	concat_str = malloc(len1 + n + 1);
+
+	if (concat_str == NULL)
 	{
 		return (NULL);
 	}
+
 	for (i = 0; i < len1; i++)
 	{
-		reslt[i] = s1[i];
+		concat_str[i] = s1[i];
 	}
-	for (i = 0; i < n && s2[i] != '\0'; i++)
-	{ reslt[len1 + i] = s2[i];
-	}	reslt[totlen] = '\0';
-		return (reslt);
+	for (j = 0; j < n; j++)
+	{
+		concat_str[i + j] = s2[j];
+	}
+	concat_str[i + j] = '\0';
+	return (concat_str);
 }
