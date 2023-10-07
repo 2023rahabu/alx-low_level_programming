@@ -4,13 +4,14 @@
  *@s1: string destination
  *@s2: string source
  *@n: n byte to be concatenated
+ *Return: allocated memory
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	size_t len1 = 0;
 	size_t len2 = 0;
-	size_t total_len = 0;
-	char *result = NULL;
+	size_t totlen = 0;
+	char *reslt = NULL;
 	size_t i;
 
 	if (s1 != NULL)
@@ -29,25 +30,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (n < len2)
 	{
-		total_len = len1 + n;
+		totlen = len1 + n;
 	}
 	else
 	{
-		total_len = len1 + len2;
+		totlen = len1 + len2;
 	}
-	result = (char *)malloc(total_len + 1);
-	if (result == NULL)
+	reslt = (char *)malloc(totlen + 1);
+	if (reslt == NULL)
 	{
 		return (NULL);
 	}
 	for (i = 0; i < len1; i++)
 	{
-		result[i] = s1[i];
+		reslt[i] = s1[i];
 	}
 	for (i = 0; i < n && s2[i] != '\0'; i++)
-	{
-		result[len1 + i] = s2[i];
-	}
-	result[total_len] = '\0';
-	return (result);
+	{ reslt[len1 + i] = s2[i];
+	}	reslt[totlen] = '\0';
+		return (reslt);
 }
