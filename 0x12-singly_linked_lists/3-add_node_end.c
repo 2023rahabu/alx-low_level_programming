@@ -15,22 +15,20 @@ list_t *add_node_end(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
+	addnewendNode->str = strdup(str);
+	addnewendNode->len = strlen(str);
+	addnewendNode->next = NULL;
+	/*Update the head to point to the newly created node*/
+	if (*head == NULL)
+	{
+		*head = addnewendNode;
+	}
 	else
 	{
-		addnewendNode->str = strdup(str);
-		addnewendNode->len = strlen(str);
-		addnewendNode->next = NULL;
-		/*Update the head to point to the newly created node*/
-		if (*head == NULL)
-		{
-			*head = addnewendNode;
-		}
-		else
-			temp = *head;
+		temp = *head;
 		while (temp->next != NULL)
 			temp = temp->next;
 		temp->next = addnewendNode;
 	}
 	return (addnewendNode);
-
 }
