@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdeff.h>
-#include<starg.h>
 
 /**
  * struct listint_s - singly linked list
