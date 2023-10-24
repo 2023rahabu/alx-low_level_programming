@@ -8,20 +8,21 @@ void free_listint2(listint_t **head)
 {
 
 	listint_t *available_node;
+	listint_t *temp = *head;
 
-	if (head == NULL || **head == NULL)
-	{
-		return;
-	}
+		if (head == NULL || *head == NULL)
+		{
+			return;
+		}
 
-	while (*head != NULL)
+	while (temp != NULL)
 	{
 		/*take available node and strore it to head*/
-		available_node = *head;
+		available_node = temp->next;
 		/*move to next node*/
-		*head = (*head)->next;
-		/*free current node*/
 		free(available_node);
+		temp = available_node;
+
 	}
 	*head = NULL;
 }
