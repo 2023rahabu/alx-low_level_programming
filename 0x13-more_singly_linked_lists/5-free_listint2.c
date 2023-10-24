@@ -9,6 +9,11 @@ void free_listint2(listint_t **head)
 
 	listint_t *available_node;
 
+	if (head == NULL || **head == NULL)
+	{
+		return;
+	}
+
 	while (*head != NULL)
 	{
 		/*take available node and strore it to head*/
